@@ -63,7 +63,7 @@
 ### Lớp C
 * Lớp C của địa chỉ Ipv4 dùng 3 octet đầu làm phần mạng và 1 octet sau làm phần host. Địa chỉ lớp C luôn có 3 bit đầu là 1 1 0. Dải mạng lớp C chạy từ 192.0.0.0 -> 223.255.255.0. Như vậy sẽ có 221 mạng trong lớp C. Đối với phần host gồm 1 octet sau cùng nên dài 8 bit và sẽ có (28 – 2) host trong lớp C. Xem ảnh minh họa.
 
-![image](https://user-images.githubusercontent.com/91528234/199882702-13b907f9-724a-49cb-859f-45f3d03e59b3.png)
+![image](https://user-images.githubusercontent.com/91528234/199887028-2f4debb7-fb51-43c1-bc18-915f71ddb148.png)
 
 
 ### Lớp D
