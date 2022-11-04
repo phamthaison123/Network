@@ -22,6 +22,16 @@
   * Tầng 3: Tầng vận chuyển (Transport Layer) đảm nhiệm việc phân nhỏ các gói tin có kích thước lớn khi gửi và tập hợp lại khi nhận, tính toàn vẹn cho dữ liệu (không lỗi, không mất, đúng thứ tự) là yếu tố được đảm bảo.Nếu để ý thì bạn sẽ thất chức năng của tầng vận chuyển ở giao thức TCP/IP cũng giống với tầng vận chuyển của mô hình OSI.
   * Tầng 4: Tầng ứng dụng (Application Layer) là nơi các chương trình mạng như Web Browser,Mail User Agent làm việc để liên lạc giữa các node mạng.Do mô hình TCP/IP không có tầng nào nằm giữa các tầng ứng dụng và tầng vận chuyển, nên tầng Application của TCP/IP bao gồm các giao thức hoạt động như tầng trình diễn và giao dịch trong OSI.
 # Phân biệt UDP/TCP
+## Giống nhau
+* TCP và UDP đều là các giao thức được sử dụng để gửi các bit dữ liệu - được gọi là các gói tin - qua Internet. Cả hai giao thức đều được xây dựng trên giao thức IP. Nói cách khác, dù bạn gửi gói tin qua TCP hay UDP, gói này sẽ được gửi đến một địa chỉ IP. Những gói tin này được xử lý tương tự bởi vì chúng được chuyển tiếp từ máy tính của bạn đến router trung gian và đến điểm đích.TCP và UDP không phải là giao thức duy nhất hoạt động trên IP, tuy nhiên, chúng được sử dụng rộng rãi nhất.
+
+## Khác nhau
+
 | TCP | UDP |
 |:----|:----|
 | Đảm bảo rằng dữ liệu đến đúng như khi được gửi. | Không đảm bảo dữ liệu đến.|
+| Kiểm tra lỗi các luồng dữ liệu. | Không cung cấp tính năng kiểm tra lỗi. |
+| Header 20 byte cho phép 40 byte dữ liệu tùy chọn | Header 8 byte chỉ cho phép dữ liệu bắt buộc. |
+| Chậm hơn UDP | Nhanh hơn TCP |
+| Tốt nhất cho các ứng dụng yêu cầu độ tin cậy. | Tốt nhất cho các ứng dụng yêu cầu tốc độ. |
+
