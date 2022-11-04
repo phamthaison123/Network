@@ -2,6 +2,7 @@
 * Mô hình OSI (Open Systems Interconnection) hay còn được gọi là “mô hình tham chiếu 7 tấng OSI”.Mục đích chính của chúng là giúp người sử dụng dễ hình dung hơn về cơ chế truyền tin giữa các máy tính với nhau.Mô hình OSI bao gồm 7 tầng, mỗi tầng đều có đặc tính là chỉ sử dụng chức năng của tầng dưới nó, đồng thời chúng cũng chỉ cho phép tầng trên sử dụng các chức năng của mình.Mô hình OSI thực chất là chia nhỏ các hoạt động phức tạp của mạng thành các phần công việc đơn giản , dễ hình dung hơn.
 * mô hình OSI - mô hình thăm chiếu 7 tầng
 ![image](https://user-images.githubusercontent.com/91528234/199876907-14a23b8d-d69e-4f8c-aade-7f2589f518f1.png)
+
 * Chức năng của từng tầng:
   * Tầng 1: Tầng vật lý (Physical Layer) có chức năng chính là điều khiển việc truyền tải các bit trên đường truyền vật lý.Chúng định nghĩa các tín hiệu điện, trạng thái đường truyền, phương pháp mã hóa dữ liệu.
   * Tầng 2: Tầng liên kết dữ liệu (Data-Link Layer) Đảm bảo truyền tải các khung dữ liệu (Frame) giữa hai máy tính có đường truyền vật lý nối trực tiếp với nhau là điều mà chúng thực hiện.Ngoài ra nó còn cài đặt cơ chế phát hiện và xử lý lỗi dữ liệu nhận.
@@ -16,6 +17,7 @@
 * Nếu OSI được hình thành mang tính chất dùng cho học tập nghiên cứu nhiều hơn là triển khai thực tế,thì TCP/IP lại khác hoàn toàn.Chính trên chiếc máy tính chúng ta đang sử dụng hàng ngày cũng dùng các giao thức TCP/IPv4 hoặc TCP/IPv6.Mô hình TCP/IP còn được gọi với cái tên khác đó là mô hình DoD.
 * Mô hình TCP/IP
 ![image](https://user-images.githubusercontent.com/91528234/199877169-4544beac-e264-4401-8c2a-74fc4317ed06.png)
+
 * Chức năng các tầng:
   * Tầng 1: Tầng truy cập (Network Access Layer) tầng này có thể coi là một tầng riêng biệt hoặc cũng có thể tách nó thành 2 tầng vật lý và tầng liên két dữ liệu như trong mô hình OSI.Nó được sử dụng để truyền gói tin từ tầng mạng đến các Host trong mạng.Các thiết bị vật lý như : Switch, cáp mạng, card mạng HBA-Host Bus Adapter là các thành phần truy cập.
   * Tầng 2: Tầng mạng (Internet Layer) trên mô hình TCP/IP có vai trò chính là giải quyết vấn đề dẫn đến các gói tin đi qua các mạng để đến đúng đích.
