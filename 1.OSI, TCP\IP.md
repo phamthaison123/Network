@@ -35,3 +35,89 @@
 | Chậm hơn UDP | Nhanh hơn TCP |
 | Tốt nhất cho các ứng dụng yêu cầu độ tin cậy. | Tốt nhất cho các ứng dụng yêu cầu tốc độ. |
 
+# IPv4
+* Ipv4 viết tắt cho Internet Protocol Version 4, dịch ra có nghĩa là giao thức Internet phiên bản thứ 4. Ipv4 đã được bộ quốc phòng Hoa Kỳ chuẩn hóa trong bản MIL-STD-1777. Giao thức Internet IP đã trải qua nhiều phiên bản khác nhau và phiên bản Ipv4 là phiên bản đầu tiên được sử dụng rộng rãi trên toàn thế giới và hiện vẫn còn đang là nòng cốt của Internet trên toàn thế giới.
+* Ipv4 là giao thức mang tính hướng dữ liệu và được sử dụng cho hệ thống chuyển mạch gói. Ipv4 không quan tâm đến thứ tự truyền gói tin, cũng không đảm bảo gói tin sẽ đến đích hay là có xảy ra tình trạng lặp gói tin ở đích đến hay không. Nó chỉ có cơ chế đảm bảo tính toàn vẹn dữ liệu bằng việc sử dụng những gói kiểm tra được thiết lập đi kèm với nó.
+* Địa chỉ Ipv4 là 1 địa chỉ đơn nhất đang được sử dụng bởi các thiết bị điện tử hiện nay để nhận diện và liên lạc với nhau trên Internet. Để đánh địa chỉ, Ipv4 sử dụng 32bit và chia ra làm 4 octet (mỗi octet có 8 bit = 1 byte). Dấu chấm được sử dụng để ngăn các octet với nhau.
+
+![image](https://user-images.githubusercontent.com/91528234/199881389-d050bb90-25c8-469c-a2ac-b28a8d6e76e5.png)
+
+* Các loại địa chỉ Ipv4: unicast, broadcast, multicast. Trong đó unicast là địa chỉ IP cho phép thiết bị gửi dữ liệu đến 1 nơi nhận duy nhất. Địa chỉ IP broadcast lại cho phép gửi dữ liệu đến các host trong 1 mạng con. Còn địa chỉ IP multicast cho phép thiết bị gửi dữ liệu đến 1 tập xác định trước các host.
+
+## Địa chỉ Ipv4 có bao nhiêu lớp?
+* Ban đầu, 1 địa chỉ Ipv4 được chia ra làm 2 phần là địa chỉ của mạng (Network ID) và địa chỉ của máy (Host ID). Địa chỉ của mạng (Network ID) được xác lập bởi octet đầu tiên và địa chỉ của máy (Host ID) được xác lập cho 3 octet còn lại. Với cách chia này thì địa chỉ của network bị giới hạn ở con số 256. Đây là con số quá ít so với nhu cầu sử dụng thực tế. Vì vậy người ta đã định nghĩa phân lớp mạng để vượt qua giới hạn này và tập hợp thành 1 lớp mạng đầy đủ còn được gọi là classful.
+
+* Địa chỉ IP được phân ra thành 5 lớp khác nhau: lớp A, lớp B, lớp C, lớp D,lớp E. Với cách phân loại này sẽ tạo được vô số địa chỉ IPv4 khác nhau. Đặc điểm của các lớp IPv4 này là gì? Hãy cùng tìm hiểu tiếp nhé.
+
+### Lớp A
+* Lấy octet1 và bit đầu là 0 còn 7 bit. Chạy từ 1.0.0.0 đến 126.0.0.0 127.0.0.0 là loopback còn 24 bít còn lại host.
+
+![image](https://user-images.githubusercontent.com/91528234/199881793-aa539a10-4024-444f-ac66-780ba9e98d90.png)
+
+### Lớp B
+* Lấy 2 octet đầu và 2 bit đầu là 10 còn 6 bit . Chạy từ 128.0.0.0 đến 191.255.0.0 còn 16 bit còn lại làm host
+
+![image](https://user-images.githubusercontent.com/91528234/199882050-39594f2b-1922-4273-b502-b339adacd391.png)
+
+
+### Lớp C
+* Lớp C của địa chỉ Ipv4 dùng 3 octet đầu làm phần mạng và 1 octet sau làm phần host. Địa chỉ lớp C luôn có 3 bit đầu là 1 1 0. Dải mạng lớp C chạy từ 192.0.0.0 -> 223.255.255.0. Như vậy sẽ có 221 mạng trong lớp C. Đối với phần host gồm 1 octet sau cùng nên dài 8 bit và sẽ có (28 – 2) host trong lớp C. Xem ảnh minh họa.
+
+![image](https://user-images.githubusercontent.com/91528234/199882702-13b907f9-724a-49cb-859f-45f3d03e59b3.png)
+
+
+### Lớp D
+Lớp D được sử dụng làm các địa chỉ multicast và dải địa chỉ lớp D từ 224.0.0.0 -> 239.255.255.255. Lấy ví dụ như Ví dụ: 224.0.0.5 dùng cho OSPF; 224.0.0.9 dùng cho RIPv2.
+
+### Lớp E
+Lớp E gồm các giải số từ 240.0.0.0 trở đi và được sử dụng cho mục đích dự phòng.
+# IPv6
+## Cấu trúc IPv6
+![image](https://user-images.githubusercontent.com/91528234/199883033-8c14d58f-67d9-45c3-b387-287aa73dc6bb.png)
+* Địa chỉ IPv6 dài 128 bit, được chia làm 8 nhóm, mỗi nhóm gồm 16 bit, được ngăn cách với nhau bằng dấu hai chấm “:”. Mỗi nhóm được biểu diễn bằng 4 số hexa.
+* Ví dụ:
+``` 
+FEDC:BA98:768A:0C98:FEBA:CB87:7678:1111
+1080:0000:0000:0070:0000:0989:CB45:345F
+```
+
+* Những địa chỉ này lớn, khả năng cung cấp địa chỉ cho nhiều node và cung cấp cấu trúc phân cấp linh hoạt, nhưng nó không dễ để viết ra. Vì vậy cần có 1 số nguyên tắc để nhằm rút ngắn lại cách biểu diễn địa chỉ IPv6. Sau đây là các quy tắc để rút gọn IPv6:
+ * Cho phép bỏ các số 0 nằm trước mỗi nhóm (octet).
+ * Thay bằng số 0 cho nhóm có toàn số 0.
+ * Thay bằng dấu “::” cho các nhóm liên tiếp nhau có toàn số 0.
+
+* Ví dụ về nén địa chỉ IPv6:
+```
+ Cho một địa chỉ: 1080:0000:0000:0070:0000:0989:CB45:345F
+  Dựa theo các quy tắc đã nêu trên, có thể nén địa chỉ IP trên như sau: 1080::70:0:989:CB45:345F hoặc 1080:0:0:70::989: CB45:345F
+```
+
+* Chú ý: Dấu “::” chỉ sử dụng đƣợc 1 lần trong toàn bộ địa chỉ IPv6 (nhiều dấu “::” có thể gây ra sự nhầm lẫn hoặc không thể biết đúng vị trí của các octet trong địa chỉ IPv6).
+
+## Biểu diễn của Address Prefixes
+* Prefix của địa chỉ IPv6 được biểu diễn tương tự với kí hiệu IPv4 CIDR. IPv6 prefix được biểu diễn như sau: IPv6-address/ prefix-length
+* Trong đó:
+ * IPv6-address là bất kì địa chỉ có giá trị, Prefix-length là số bit liền kề nhau được bao gồm trong prefix.
+```
+Ví dụ: Sau đây là quy tắc biểu diễn cho 56 bit prefix 200F00000000AB:
+200F::AB00:0:0:0:0/56
+200F:0:0:AB00::/56
+```
+
+* Chú ý với địa chỉ IPv6, kí hiệu “::” được sử dụng 1 lần duy nhất trong mỗi sự biểu diễn.
+* Theo sau là các cách biểu diễn sai của 56 bit prefix:
+```
+200F:0:0:AB/56
+200F::AB00/56
+200F::AB/56
+```
+* Cách biểu diễn đầu tiên là không hợp lệ bởi vì các số 0 theo sau trong vòng một trường 16-bit (AB00) bị mất, và địa chỉ không đủ chiều dài hợp lệ. Địa chỉ IPv6 trên bên trái của dấu gạch chéo “/” phải là một địa chỉ IPv6 có chiều dài đầy đủ hoặc được nén hợp lệ. Cách biểu diễn thứ hai và thứ ba là địa chỉ IPv6 được nén hợp lệ nhưng nó không giãn ra thành địa chỉ chính xác. Thay vì 200F:0000:0000:AB00:0000:0000:0000:0000 nó sẽ giãn thành 200F:0000:0000:0000:0000:0000:0000:AB00 và 200F:0000: 0000:0000:0000:0000:0000:00AB, tương ứng.
+
+## Phân loại địa chỉ IPv6
+* Một địa chỉ IPv6 có thể được phân thành 1 trong 3 loại:
+ * Unicast: Một địa chỉ unicast được định nghĩa duy nhất trên một cổng của một node IPv6. Một gói tin được gởi đến một địa chỉ unicast được đưa đến cổng được định nghĩa bởi địa chỉ đó.
+ * Multicast: Một địa chỉ multicast định nghĩa một nhóm các cổng IPv6. Một gói tin gởi đến địa chỉ multicast được xử lý bởi tất cả những thành viên của nhóm multicast.
+ * Anycast: Một địa chỉ anycast được đăng kí cho nhiều cổng (trên nhiều node). Một gói tin được gởi đến một địa chỉ anycast là được chuyển đến chỉ một trong số các cổng này, thường là gần nhất.
+* Global Routing Prefixes
+Bảng sau đây đưa ra các prefix được gán hiện tại của tiền tố dành riêng và địa chỉ đặc biệt, ví dụ như địa chỉ Link-local hoặc địa chỉ multicast. Phần chính của không gian địa chỉ (hơn 80%) không được gán, để chỗ cho những đăng kí trong tương lai.
+![image](https://user-images.githubusercontent.com/91528234/199886930-53a63293-f1cc-40d0-8e4c-cae401ccec9e.png)
